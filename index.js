@@ -10,4 +10,6 @@ async function subscribe() {
         applicationServerKey: 'BMJCha-2I_8Py_t9YRZ-h89NwtB88CKCvoUlEHDiN3D-Yd24RikbX7LjaxjGN9Y5qBGng55tdtwdB3TzE1_FMwQ'
     });
     console.log(JSON.stringify(push));
+    let endpointDiv = document.getElementById("endpoint");
+    endpointDiv.innerHTML = JSON.stringify(push);
 }
