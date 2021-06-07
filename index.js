@@ -12,4 +12,13 @@ async function subscribe() {
     console.log(JSON.stringify(push));
     let endpointDiv = document.getElementById("endpoint");
     endpointDiv.innerHTML = JSON.stringify(push);
+
+    //sending to database
+    await fetch('https://pushtutorial.netlify.app/subscribe', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(push)
+    });
 }
