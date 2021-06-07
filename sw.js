@@ -5,7 +5,7 @@ self.addEventListener('push', (e) =>{
         vibrate:[100, 50, 100],
 
     }
-    e.waitUntil(self.registration.showNotification('test message', options));
+    e.waitUntil(self.registration.showNotification('Click For Eternal Wisdom', options));
 })
 
 self.addEventListener('notificationclick', (e) =>{
