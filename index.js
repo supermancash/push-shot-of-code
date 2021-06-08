@@ -14,7 +14,7 @@ async function subscribe() {
     let endpointDiv = document.getElementById("endpoint");
     endpointDiv.innerHTML = JSON.stringify(push);
 
-    await fetch("https://0302e923a07a.ngrok.io/api/subscribers", {
+    await fetch("https://85f01fccc2e0.ngrok.io/api/subscribers", {
         method: 'POST',
         credentials: 'omit',
         mode: 'cors',
