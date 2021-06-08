@@ -17,6 +17,7 @@ async function subscribe() {
     await fetch("https://2a57124853f1.ngrok.io/api/subscribers", {
         method: 'POST',
         credentials: 'omit',
+        mode: 'cors',
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Request-Headers':'*'
