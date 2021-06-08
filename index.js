@@ -1,3 +1,4 @@
+
 addEventListener('load', async() =>{
     let sw = await navigator.serviceWorker.register('./sw.js');
     console.log(sw);
@@ -13,12 +14,11 @@ async function subscribe() {
     let endpointDiv = document.getElementById("endpoint");
     endpointDiv.innerHTML = JSON.stringify(push);
 
-    //sending to database
-    await fetch('https://pushtutorial.netlify.app/subscribe', {
-        method: "POST",
+    await fetch("https://e23ab2b69d48.ngrok.io/api/subscribers", {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(push)
-    });
+    })
 }
