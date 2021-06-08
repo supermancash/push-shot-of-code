@@ -17,6 +17,9 @@ async function subscribe() {
     await fetch("https://2a57124853f1.ngrok.io/api/subscribers", {
         method: 'POST',
         credentials: 'omit',
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify(push)
     }).then(response => response.json())
         .then(data => {
