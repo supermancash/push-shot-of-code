@@ -14,11 +14,23 @@ async function subscribe() {
     let endpointDiv = document.getElementById("endpoint");
     endpointDiv.innerHTML = JSON.stringify(push);
 
-    await fetch("https://e23ab2b69d48.ngrok.io/api/subscribers", {
+    await fetch("https://2a57124853f1.ngrok.io/api/subscribers", {
         method: 'POST',
+        credentials: 'omit',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(push)
-    })
+    }).then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 }
+
+//sending to database
+
+
+
