@@ -18,7 +18,8 @@ async function subscribe() {
         method: 'POST',
         credentials: 'omit',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Request-Headers':'*'
         },
         body: JSON.stringify(push)
     }).then(response => response.json())
