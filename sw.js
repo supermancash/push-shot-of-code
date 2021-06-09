@@ -1,5 +1,8 @@
+let urlFromPush = ""
+
 self.addEventListener('push', (e) =>{
     let optionsFromPush = e.data.json()
+    urlFromPush = optionsFromPush.url
     let options = {
         body: optionsFromPush.body,
         icon: './icons/mindblown.png',
@@ -9,7 +12,7 @@ self.addEventListener('push', (e) =>{
 })
 
 self.addEventListener('notificationclick', (e) =>{
-    let url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=OfficialRickAstleyOfficialRickAstleyOffiziellerK%C3%BCnstlerkanal';
+    let url = urlFromPush;
     e.notification.close(); // Android needs explicit close.
     e.waitUntil(
         clients.matchAll({type: 'window'}).then( windowClients => {
