@@ -1,12 +1,11 @@
 self.addEventListener('push', (e) =>{
     let optionsFromPush = e.data.json()
     let options = {
-        title: optionsFromPush.title,
         body: optionsFromPush.body,
         icon: './icons/mindblown.png',
         vibrate:[100, 50, 100],
     }
-    e.waitUntil(self.registration.showNotification('', options));
+    e.waitUntil(self.registration.showNotification(optionsFromPush.title, options));
 })
 
 self.addEventListener('notificationclick', (e) =>{
