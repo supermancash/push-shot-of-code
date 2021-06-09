@@ -1,7 +1,8 @@
 self.addEventListener('push', (e) =>{
+    let optionsFromPush = e.data.json()
     let options = {
-        title: e.title,
-        body: e.body,
+        title: optionsFromPush.title,
+        body: optionsFromPush.body,
         icon: './icons/mindblown.png',
         vibrate:[100, 50, 100],
     }
