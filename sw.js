@@ -1,11 +1,11 @@
 self.addEventListener('push', (e) =>{
     let options = {
-        body:'',
-        icon: '',
+        title: e.title,
+        body: e.body,
+        icon: './icons/mindblown.png',
         vibrate:[100, 50, 100],
-
     }
-    e.waitUntil(self.registration.showNotification('Click For Eternal Wisdom', options));
+    e.waitUntil(self.registration.showNotification('', options));
 })
 
 self.addEventListener('notificationclick', (e) =>{
