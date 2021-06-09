@@ -31,11 +31,11 @@ async function subscribe() {
         body: JSON.stringify(push)
     }).then(response => response.json())
         .then(data => {
-            endpointDiv.innerHTML = "Registration Successful:)";
+            //endpointDiv.innerHTML = "Registration Successful:)";
             console.log('Success:', data);
         })
         .catch((error) => {
-            endpointDiv.innerHTML = "Registration failed :(";
+            //endpointDiv.innerHTML = "Registration failed :(";
             console.error('Error:', error);
         });
 }
