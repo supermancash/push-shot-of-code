@@ -18,7 +18,7 @@ async function subscribe() {
     });
     console.log(JSON.stringify(push));
     let endpointDiv = document.getElementById("endpoint");
-    endpointDiv.innerHTML = JSON.stringify(push);
+    endpointDiv.innerHTML = "Registration successful!";
 
     await fetch("https://aa9394429376.ngrok.io/api/subscribers", {
         method: 'POST',

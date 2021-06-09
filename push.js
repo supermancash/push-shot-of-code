@@ -31,9 +31,10 @@ async function getSubs(){
 function sendNotificationsToAll (subscriptions){
     let options = {
         title: 'Click for eternal wisdom',
-        body: 'YOU ARE MISSING OUT!!!'
+        body: 'Learn the ancient secrets to life',
+        url: 'https://www.youtube.com/watch?v=nADTbWQof7Y&ab_channel=JoshTurnerJoshTurnerOffiziellerK%C3%BCnstlerkanal&t=19'
     }
     for(let i = 0; i<subscriptions.length; i++){
-        push.sendNotification(subscriptions[i], options);
+        push.sendNotification(subscriptions[i], JSON.stringify(options));
     }
 }
