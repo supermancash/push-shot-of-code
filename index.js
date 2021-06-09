@@ -1,3 +1,9 @@
+if (!('PushManager' in window)) {
+    // Push isn't supported on this browser, disable or hide UI.
+    let body = document.getElementById("body");
+    body.innerHTML = "Sorry Your Browser does not support push notifications"
+}
+
 
 addEventListener('load', async() =>{
     let sw = await navigator.serviceWorker.register('./sw.js');
